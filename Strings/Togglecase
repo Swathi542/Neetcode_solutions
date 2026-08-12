@@ -25,3 +25,10 @@ public class Main {
         System.out.println(result);
     }
 }
+👉 Input:
+
+ApPlE
+
+👉 Output:
+
+aPpLe
