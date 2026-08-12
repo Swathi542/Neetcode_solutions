@@ -1,0 +1,49 @@
+3. Check Isomorphic Strings
+
+👉 Input: egg add
+👉 Output: Yes
+
+👉 Input: foo bar
+👉 Output: No
+using arraylist
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        String s1 = sc.next();
+        String s2 = sc.next();
+
+        // length check
+        if(s1.length() != s2.length()){
+            System.out.println("No");
+            return;
+        }
+
+        ArrayList<Character> list1 = new ArrayList<>();
+        ArrayList<Character> list2 = new ArrayList<>();
+
+        for(int i = 0; i < s1.length(); i++){
+            char c1 = s1.charAt(i);
+            char c2 = s2.charAt(i);
+
+            int index1 = list1.indexOf(c1);
+            int index2 = list2.indexOf(c2);
+
+            // if both not seen before
+            if(index1 == -1 && index2 == -1){
+                list1.add(c1);
+                list2.add(c2);
+            }
+            // if mapping mismatch
+            else if(index1 != index2){
+                System.out.println("No");
+                return;
+            }
+        }
+
+        System.out.println("Yes");
+    }
+}
