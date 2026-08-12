@@ -1,0 +1,28 @@
+ Check Rotation
+
+👉 Input: abcde , cdeab
+👉 Output: Yes
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        String s1 = sc.next();
+        String s2 = sc.next();
+
+        // length check
+        if(s1.length() != s2.length()){
+            System.out.println("No");
+            return;
+        }
+
+        String temp = s1 + s1;
+
+        if(temp.contains(s2)){
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+}
